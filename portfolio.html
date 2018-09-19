@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="icon" href="favicon.ico" type="image/x-icon">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+      <link rel="stylesheet" href="css/slick.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+      <title>trillo &mdash; Your all-in-one booking app</title>
+      <style>
+         .text-left {
+              text-align: left; }
+
+            .portfolio-wrap {
+              max-width: 1170px;
+              margin: 0 auto;
+              text-align: center; }
+
+            .portfolio__portfolio-box {
+              display: flex;
+              align-items: center;
+              align-content: flex-start;
+              justify-content: space-between;
+              margin-top: 43px;
+              flex-wrap: wrap; }
+              .portfolio__portfolio-box__item {
+                width: calc(100% / 2 - 10px);
+                position: relative;
+                display: block;
+                margin-top: 20px;
+                overflow: hidden;
+                transition: all .3s; }
+                @media only screen and (min-width: 769px) {
+                  .portfolio__portfolio-box__item:nth-child(odd) {
+                    margin-right: 0px; } }
+                @media only screen and (max-width: 768px) {
+                  .portfolio__portfolio-box__item {
+                    width: 100%;
+                    margin-bottom: 30px; } }
+                .portfolio__portfolio-box__item__text {
+                  font-family: "MuseoSansCyrl500";
+                  color: #ffffff;
+                  font-size: 24px;
+                  font-weight: 400;
+                  line-height: 30px;
+                  letter-spacing: 0.6px;
+                  padding: 30px;
+                  text-align: left;
+                  position: absolute;
+                  display: block;
+                  width: 100%;
+                  height: 130px;
+                  background-color: rgba(0, 0, 0, 0.5);
+                  bottom: -140px;
+                  transition: all .6s; }
+                  @media only screen and (max-width: 1200px) {
+                    .portfolio__portfolio-box__item__text {
+                      bottom: 0; } }
+                  @media only screen and (max-width: 320px) {
+                    .portfolio__portfolio-box__item__text {
+                      padding: 20px;
+                      font-size: 18px;
+                      letter-spacing: 0.45px; } }
+                .portfolio__portfolio-box__item:hover .portfolio__portfolio-box__item__text {
+                  bottom: 0; }
+                .portfolio__portfolio-box__item__link {
+                  position: absolute;
+                  top: 0;
+                  bottom: 0;
+                  left: 0;
+                  right: 0;
+                  cursor: pointer; }
+                .portfolio__portfolio-box__item__picture {
+                  width: 100%; }
+                .portfolio__portfolio-box__item__title {
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  width: calc(100% - 35px);
+                  height: calc(100% - 35px);
+                  border: 3px solid transparent;
+                  overfloy: hidden;
+                  transition: all .6s; }
+                  @media only screen and (max-width: 1200px) {
+                    .portfolio__portfolio-box__item__title {
+                      border: 3px solid #d37200; } }
+                  @media only screen and (max-width: 320px) {
+                    .portfolio__portfolio-box__item__title {
+                      width: calc(100% - 14px);
+                      height: calc(100% - 32px); } }
+                  .portfolio__portfolio-box__item__title:hover {
+                    border: 3px solid #d37200; }
+
+            @media only screen and (max-width: 1200px) {
+              .portfolio {
+                padding-left: 20px;
+                padding-right: 20px; } }
+
+            .portfolio-btn {
+              display: block;
+              margin: 70px auto 150px; }
+
+            .portfolio-icon {
+              display: inline-block;
+              transform: translate(-5px, 7px); }
+      </style>
+   </head>
+
+   <body id="body">
+      <section class="menu page-question-menu">
+         <div class="menu__menu-box page-question-menu-box">
+            <div class="menu__menu-box__box-logo-serch questions-serch">
+               <div class="menu__menu-box__box-logo-serch__logo-menu j-open-scroll-menu">
+                  <div class="hamburger-icon  ">
+                     <div class="top"></div>
+                     <div class="middle"></div>
+                     <div class="middle-second"></div>
+                     <div class="bottom"></div>
+                  </div> 
+                  <!--<span class="menu__menu-box__box-logo-serch__logo-menu__hamburger-icon-text">Меню</span>-->
+
+               </div>
+               <div class="menu__menu-box__box-logo-serch__search-box j-open-search-form">
+                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAACNElEQVRIS72WTYiNURjHfz80kmbysZhYjc9MajQpQ2RDdkqKpMwCC81CPjZKMSIrCxRSlChFWZCQfC1kRxYS8lGi5CtFqUGPjs6d7r1z752vO556N+97zvs7z3P+5/kfqRIR0Q5sAJYDE4BRwB/gK3AXOKU+rTa/+L3lgyJiNHAeWAa8AS4Bd4CPwBRgBbASaAEuq5v6A5VAIqIVeJSfTvVVjUznAmeA6cA89V21sb2QiGgGPgAn1K7+Vlf4HhEXgLVAo/qj0rxiyCfgtrpuoIAi0D2gWU2V6BP/IBGxFTikNgwWUAQKYIt6svwfBcg3YLd6bBiQ/cAOdXwfSEQsAG6ok4YKyNUYl/e0XX1dIuGIOA60qUuGA8mgh8AVdV855BrQo66qAySdqV/l4jEi/gskqaFVXVqHTNJBvqruKS9XB3AdmKwmGQ4pIqIReAF0qG9LIHnD6iHhg0CXmpppSRTOyU7ggJpkOKSIiFSFbeqRipCczWfgprp+sJSISOVuqdlWMmQq8B44rG4fKCgiUiderTZVm1Pe6mcCz4D7wGb1ZbWJEdEGHAUWAV+AGerPSuMrmdZY4BywGHgCPACSr6Qsp2WzWphknxxS7YyIbmAvMKvSwvpACivJK90FzM72+zvbb/KM50B3cY+KiNPAxuSeavKl3qgKKU87IhrUnlp7FRFn872gSf1eGDtgyCCEcBFYA4xR08WDukOyUm8B89WJIwbJoCSYtJ9zRiSTIvE8Tgr8C9vY4LfyW1GDAAAAAElFTkSuQmCC" class="search-ico" alt=""> 
+                  <!--<span class="menu__menu-box__box-logo-serch__search-text">Поиск</span>--> </div>
+            </div>
+            <form class="search-form"> 
+
+               <label for="" class="search-form__label-search">
+                  <input type="text" class="search-form__input-search" placeholder="найти товар">
+                  <button class="btn btn-search">Найти</button>
+                  <button title="Close (Esc)" type="button" class="form-close j-close">×</button>
+               </label>
+            </form>
+            <div class="logo">
+               <a href="#home"><img src="img/logo.png" alt=""> </a>
+            </div>
+            <ul class="menu__menu-box__scroll-menu j-menu__menu-box__scroll-menu">
+
+               <li class="menu__menu-box__scroll-menu__list__item">
+                  <button title="Close (Esc)" type="button" class="close j-close">×</button>
+               </li>
+
+               <li class="menu__menu-box__scroll-menu__list__item"><a class="" href="#home"> Главная</a></li>
+               <li class="menu__menu-box__scroll-menu__list__item"><a class="" href="#">Каталог </a></li>
+               <li class="menu__menu-box__scroll-menu__list__item"><a class="" href="#">Доставка и оплата</a></li>
+               <li class="menu__menu-box__scroll-menu__list__item"><a class="" href="#">О компании</a></li>
+               <li class="menu__menu-box__scroll-menu__list__item"><a class="" href="#">Наши работы</a></li>
+               <li class="menu__menu-box__scroll-menu__list__item"><a class="" href="#question">Вопрос/Ответ</a></li>
+               <li class="menu__menu-box__scroll-menu__list__item"><a class="" href="#">новости</a></li>
+               <li class="menu__menu-box__scroll-menu__list__item"><a class="" href="#">отзывы</a></li>
+               <li class="menu__menu-box__scroll-menu__list__item"><a class="" href="#contacts">Контакты</a></li>
+               <li class="menu__menu-box__scroll-menu__list__item">
+                  <a href="tel:+7 (978) 127-23-33" class=" tel">+7 (978) 127-23-33</a>
+                  <a href="tel:+7 (978) 127-23-33" class=" tel"><i class="viber-ico"></i></a> 
+                  <a href="tel:+7 (978) 127-23-33" class=" tel"><i class="whatsapp-ico"></i></a>
+                  <br> <a href="mailto:domkamin@gmail.com" class="email">domkamin@gmail.com</a>
+                  <div class="box-soc-icons"> 
+                     <a href=""><i class="vk-ico"></i></a> 
+                     <a href=""><i class="insta-ico"></i></a> 
+                     <a href=""><i class="fb-ico"></i></a> 
+                     <a href=""><i class="youtube-ico"></i></a> 
+                     <a href=""><i class="ok-ico"></i></a> 
+                  </div>
+               </li>
+            </ul>
+            <div class="menu__menu-box__contacts">
+               <a href="tel:+7 (978) 127-23-33" class="tel">+7 (978) 127-23-33</a>
+               <button class="call__back-btn j-form-сallback">Заказать звонок</button>
+            </div>
+         </div>
+      </section>
+      
+      <section class="portfolio">
+         <div class="portfolio-wrap">
+            <ul class="breadcrumb text-left">
+               <li><a href="#" class="breadcrumb__link">Главная   </a> <span class="divider">/</span></li>
+               <li><a href="#" class="breadcrumb__link">Портфолио</a></li>
+
+            </ul>
+
+            <p class="accent-header accent-header__doble text-center"><span>работы</span> наши работы</p>
+            
+            <div class="portfolio__portfolio-box">
+
+               <div class="portfolio__portfolio-box__item">
+                  <picture>
+                       <source media="(max-width: 320px)" srcset="images/port-small-1.png">
+                       <img src="images/port-1.png" class="portfolio__portfolio-box__item__picture" alt="">
+                  </picture>
+                  <p class="portfolio__portfolio-box__item__text">Камин на дачном участке </p>
+                  
+                  <div class="portfolio__portfolio-box__item__title">
+                     <a href="#" class="portfolio__portfolio-box__item__link"></a>
+                     
+                  </div>
+
+               </div>
+
+
+               
+               <div class="portfolio__portfolio-box__item">
+                  <!-- <img src="images/port-2.png" alt="" class="portfolio__portfolio-box__item__picture"> -->
+                  <picture>
+                       <source media="(max-width: 320px)" srcset="images/port-small-2.png">
+                       <img src="images/port-2.png" class="portfolio__portfolio-box__item__picture" alt="">
+                  </picture>
+                  <p class="portfolio__portfolio-box__item__text">Биокамин в квартире по адресу: пр. Ленина 8а</p>
+                  
+                  <div class="portfolio__portfolio-box__item__title">
+                      <a href="#" class="portfolio__portfolio-box__item__link"></a>
+                  </div>
+                </div>
+
+               <div class="portfolio__portfolio-box__item">
+                  <picture>
+                       <source media="(max-width: 320px)" srcset="images/port-small-3.png">
+                       <img src="images/port-3.png" class="portfolio__portfolio-box__item__picture" alt="">
+                  </picture>
+                  <p class="portfolio__portfolio-box__item__text">Барбекю в частном секторе</p>
+                  <div class="portfolio__portfolio-box__item__title">
+                     <a href="#" class="portfolio__portfolio-box__item__link"></a>
+                  </div>
+               </div>
+               
+               <div class="portfolio__portfolio-box__item">
+                  <picture>
+                       <source media="(max-width: 320px)" srcset="images/port-small-4.png">
+                       <img src="images/port-4.png" class="portfolio__portfolio-box__item__picture" alt="">
+                  </picture>
+                  <p class="portfolio__portfolio-box__item__text">Электрокамин в элитном пентхаусе </p>
+                  <div class="portfolio__portfolio-box__item__title">
+                      <a href="#" class="portfolio__portfolio-box__item__link"></a>
+                    
+                  </div>
+               </div>
+
+                <div class="portfolio__portfolio-box__item">
+                  <picture>
+                       <source media="(max-width: 320px)" srcset="images/port-small-5.png">
+                       <img src="images/port-5.png" class="portfolio__portfolio-box__item__picture" alt="">
+                  </picture>
+                  <p class="portfolio__portfolio-box__item__text">Электрокамин в элитном пентхаусе </p>
+                  <div class="portfolio__portfolio-box__item__title">
+                     <a href="#" class="portfolio__portfolio-box__item__link"></a>
+                     
+                  </div>
+               </div>
+               
+               <div class="portfolio__portfolio-box__item">
+                  <picture>
+                       <source media="(max-width: 320px)" srcset="images/port-small-6.png">
+                       <img src="images/port-6.png" class="portfolio__portfolio-box__item__picture" alt="">
+                  </picture>
+                  <p class="portfolio__portfolio-box__item__text">Камин на дачном участке</p>
+                  <div class="portfolio__portfolio-box__item__title">
+                      <a href="#" class="portfolio__portfolio-box__item__link"></a>
+                  </div>
+               </div>
+
+               <div class="portfolio__portfolio-box__item">
+                  <picture>
+                       <source media="(max-width: 320px)" srcset="images/port-small-7.png">
+                       <img src="images/port-7.png" class="portfolio__portfolio-box__item__picture" alt="">
+                  </picture>
+                  <p class="portfolio__portfolio-box__item__text">Биокамин в квартире по адресу: пр. Ленина 8а</p> 
+                  <div class="portfolio__portfolio-box__item__title">
+                     <a href="#" class="portfolio__portfolio-box__item__link"></a>
+                  </div>
+               </div>
+               
+               <div class="portfolio__portfolio-box__item">
+                  <picture>
+                       <source media="(max-width: 320px)" srcset="images/port-small-8.png">
+                       <img src="images/port-8.png" class="portfolio__portfolio-box__item__picture" alt="">
+                  </picture>
+                  <p class="portfolio__portfolio-box__item__text">Барбекю в частном секторе</p>
+                  <div class="portfolio__portfolio-box__item__title">
+                      <a href="#" class="portfolio__portfolio-box__item__link"></a>
+                  </div>
+               </div>
+            
+            
+            <a href="#" class="btn btn_gray portfolio-btn">
+               <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTkiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAgMCAxOSAyNSI+PGc+PGcgb3BhY2l0eT0iLjc1IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODk2IC0yMTA0KSI+PGltYWdlIHdpZHRoPSIxOSIgaGVpZ2h0PSIyNSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoODk2IDIxMDQpIiB4bGluazpocmVmPSJkYXRhOmltYWdlL3BuZztiYXNlNjQsaVZCT1J3MEtHZ29BQUFBTlNVaEVVZ0FBQUJNQUFBQVpDQVlBQUFEVHl4V3FBQUFCL0VsRVFWUklTNlhWT1l5T1lSQUg4TitpSUs0SVZ1SU1uU3RLZ3NxWmlDZ2R3UzZkSTZIYVVPb1FGWW1qYzhkUmlraWNGVUlwcm80NEU1YUlLeFNJekdhKzVQWHU5KzM3Zld2SzU1bm5QLytaLzh3OGJhcHRPYWJpV0pWclc0WERCTHpHV1d6NEg3Qkp1SWZ4Mkk0ai9RV2JqU3VZbUFEM2NSblBjUVB2NmdIWFMzTWdIbUJtQXlZL2NSejc4TExvMDZobUM1UEp5SFIrbEd6bVlXaWVmY0c2ektEbnFDOEJJdFc3R0lhZE9JUjJyTVVlakVyUVpiaGVCQnVOVC9oVFNtMEdIdU1rTmhYdVF1V3JXWXBmS1ZKM2pkbWxqTFFDWDB1QXdTU1VQVkE2SDR0bnlid25XSUFGcXcvcDJJSFRWUzFRdU45YWFKbjJBTnVJVS9pQjZYalJBdGdRZEtjb25RRVdFdS9DSFlTS3JkcE5MQXFjQUR1TWJiaUlOYTBpNFFKV1I3b0J0aGU3Y1F1TCt3RjJHd3V3UDhDaTZLSEdkNFJDVWJ0bWJRcWVJbXJYRVdBQjhENWZSN3BIbTBVcWlCZFB4dFQ2N0FRNjhRM1RVcUVpWmhkZTRYd3AwUEFjcDJqNFZUV3dZUGNXZzdMall5RytLVHlzQll2aGYxSUNISkFOLzdFNG0wdHhMUjBqVXN4Zk1Ja1M3TURCWkQ0ZkQrdVZvanpvTVU3bk1DS2RRNVJZa09Nd0s4OCtZeVZDeFgrczN0YVluSzJ5R1lNYmlCSERQd2UvaS9kOXJhQmdzeVEvazJBeU54L0dueEFaOUVxMTZrT3BCWTZXaVVrSmtXSkJocks5ckZtd00xaWZmMEpSNWNxYTFRdTZKVCtUV0lnTjdTOEFBMktoblAxWWRRQUFBQUJKUlU1RXJrSmdnZz09Ii8+PC9nPjwvZz48L3N2Zz4=" alt="" class="portfolio-icon">Загрузить еще</a>
+         </div>
+      </div>
+      </section>
+      
+      
+      
+
+     
+     
+      
+      <script src="js/jquery-3.3.1.min.js"></script>
+      <script src="js/slick.min.js"></script>
+      <script src="js/my.js"></script>
+      <script src="js/twb-tabs.js"></script>
+   </body>
+
+</html>
